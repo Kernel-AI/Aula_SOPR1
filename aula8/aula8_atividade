@@ -1,0 +1,33 @@
+# Classe carro: Implemente uma classe chamada Carro com as seguintes propriedades:
+# u Um veículo tem um certo consumo de combustível (medidos em km / litro) e uma certa  ok
+# quantidade de combustível no tanque.                                                    ok
+# u O consumo é especificado no construtor e o nível de combustível inicial é 0.        ok
+# u Forneça um método andar( ) que simule o ato de dirigir o veículo por uma certa
+# distância, reduzindo o nível de combustível no tanque de gasolina.
+# u Forneça um método obterGasolina( ), que retorna o nível atual de combustível.
+# u Forneça um método adicionarGasolina( ), para abastecer o tanque.
+
+class Carro:
+
+    km_L = 0
+    tanque_L = 0
+
+    def __init__(self, km_L):
+        self.km_L = km_L
+
+    def adicionarGasolina(self, addGasolina):
+        self.tanque_L += addGasolina
+
+    def obterGasolina(self):
+        print(self.tanque_L)
+
+    def andar(self, km):
+        self.tanque_L -= km / self.km_L
+
+
+
+carro = Carro(10)
+carro.adicionarGasolina(12)
+carro.obterGasolina()
+carro.andar(10)
+carro.obterGasolina()
